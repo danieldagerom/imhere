@@ -1,4 +1,4 @@
-import {  Text, View, TextInput, TouchableOpacity, ScrollView  } from 'react-native'
+import {  Text, View, TextInput, TouchableOpacity, ScrollView, Alert  } from 'react-native'
 
 import { Participant } from '../../components/Participant'
 
@@ -8,11 +8,13 @@ export function Home(){
   const participants = ['Daniel', 'John', 'Marcos', 'Petghazi', 'Johny', 'Eduardo', 'Clebert', 'absurdo', 'Cleitino', 'Comembolo', 'aluizio', 'frank sinatra']
 
   function handleParticipantAdd() {
-    console.log('voce clicou no botão de adicionar!')
+    if (participants.includes("Daniel")){
+      return Alert.alert("Novo", "Já existe o participante na lista com esse nome")
+    }
   }
 
   function handleParticipantRemove(name:string) {
-    console.log(`voce clicou em remover ${name}`)
+    Alert.alert("Remover", `"Remover o participante ${name}"`)
 
   }
 
